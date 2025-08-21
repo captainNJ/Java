@@ -1,0 +1,38 @@
+//Guess the number
+import java.util.Random;
+import java.util.Scanner;
+public class func {
+    public static void main(String[] args){
+        Scanner scan=new Scanner(System.in);
+        Random random=new Random();
+
+        int num,i;
+        int score=10;
+        int ranNumber=random.nextInt(1,11);
+
+        for(i=1;i<=10;i++){
+            System.out.print("Enter the number between 1 to 10:");
+            num=scan.nextInt();
+
+            if(ranNumber==num)
+            {
+                System.out.println("-----yo gotchaa-----");
+                System.out.printf("you found the Random Number %d and your Score is %d\n",ranNumber,score);
+                System.out.println("---you won the game---");
+                break;
+            }
+            else{
+                score=score-1;
+                System.out.printf("you found the wrong value and your Score is %d\n",score);
+            }
+        }
+        if(score==0)
+        {
+            System.out.println("-----you lost the game-----");
+        }
+
+
+
+        scan.close();
+    }
+}
