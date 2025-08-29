@@ -1,0 +1,23 @@
+// Season Finder with Enhanced Switch case
+import java.util.Scanner;
+public class main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Enter the name of the Month :");
+        String nameOfMonth=input.nextLine().toLowerCase();
+
+        switch (nameOfMonth){
+            case "december","january","february" -> System.out.printf("The Month %s is Winter Season",nameOfMonth);
+
+            case "march","april","may" -> System.out.printf("The Month %s is Spring Season",nameOfMonth);
+
+            case "june","july","august"-> System.out.printf("The Month %s is Summer Season",nameOfMonth);
+
+            case "september","october","november" -> System.out.printf("The Month %s is Autumn/Fall  Season",nameOfMonth);
+
+            default -> System.out.printf("Enter a valid month name.... %s is not a month ",nameOfMonth);
+        }
+        input.close();
+    }
+}
