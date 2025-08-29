@@ -6,11 +6,11 @@ public class func {
         Scanner scan=new Scanner(System.in);
         Random random=new Random();
 
-        int num,i;
+        int num;
         int score=10;
         int ranNumber=random.nextInt(1,11);
 
-        for(i=1;i<=10;i++){
+        while(score!=0){
             System.out.print("Enter the number between 1 to 10:");
             num=scan.nextInt();
 
