@@ -1,0 +1,85 @@
+//Dice rollgame
+import java.util.Scanner;
+import java.util.Random;
+public class dicegame {
+    public static void main(String args[]){
+        Random randomNum=new Random();
+        Scanner scan=new Scanner(System.in);
+
+        int noRoll;
+        int total=0;
+
+        System.out.print("Enter the number roll you want :");
+        noRoll=scan.nextInt();
+        if(noRoll>0)
+        {
+            for(int i=0;i<noRoll;i++){
+                int roll=randomNum.nextInt(1,7);
+                diceSpin(roll);
+                System.out.println("you rolled for "+roll);
+                total +=roll;
+            }
+            System.out.println("The total value is "+total);
+        }
+        else{
+            System.out.println("roll number can't be negative ");
+        }
+        scan.close();
+    }
+    static void diceSpin(int roll){
+        String dice1= """
+                 _________
+                |         |
+                |    ●    |
+                |         |
+                 _________
+                """;
+
+        String dice2= """
+                 _________
+                | ●       |
+                |         |
+                |       ● |
+                 _________
+                """;
+
+        String dice3= """
+                 _________
+                | ●       |
+                |    ●    |
+                |       ● |
+                 _________
+                """;
+        String dice4= """
+                 _________
+                | ●     ● |
+                |         |
+                | ●     ● |
+                 _________
+                """;
+        String dice5= """
+                 _________
+                | ●     ● |
+                |    ●    |
+                | ●     ● |
+                 _________
+                """;
+        String dice6= """
+                 _________
+                | ●     ● |
+                | ●     ● |
+                | ●     ● |
+                 _________
+                """;
+        switch (roll){
+            case 1-> System.out.println(dice1);
+            case 2-> System.out.println(dice2);
+            case 3-> System.out.println(dice3);
+            case 4-> System.out.println(dice4);
+            case 5-> System.out.println(dice5);
+            case 6-> System.out.println(dice6);
+
+            default -> System.out.println("Invalid number");
+        }
+    }
+}
